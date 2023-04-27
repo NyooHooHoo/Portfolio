@@ -1,0 +1,15 @@
+body {
+    background-color: #1a1918;
+}
+
+nav {
+    background-color: #ffb663;
+}
+
+.content-list li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.content-list li:not(:first-child) {
+    margin-top: 20px;
+}
