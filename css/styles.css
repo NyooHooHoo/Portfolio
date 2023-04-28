@@ -17,6 +17,10 @@ nav {
     width: 90%;
 }
 
+.code-block {
+    border-radius: 15px;
+}
+
 .content-list li:not(:last-child) {
     margin-bottom: 10px;
 }
