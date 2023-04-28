@@ -6,15 +6,20 @@
 
         <title>Aidan Wang | Portfolio</title>
 
-        <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+
+            <!-- Name Branding -->
             <a class="navbar-brand" href="index.html">Aidan Wang</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -43,27 +48,38 @@
             </div>
         </nav>
 
+        <!-- Main Content -->
         <div class="container tutorial-main-container">
-            <div class="container tutorial-content-container" style="align-items: center;">
+
+            <!-- Title -->
+            <div class="container tutorial-content-container">
                 <h1>Object Oriented Programming (OOP)</h1>
-            </div>
-            <div class="container" style="margin-top: 2%; width: 90%;">
+            </div>    
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
                 <ul>
                     <li><b>Procedural Programming:</b> most basic, one main program runs start to finish</li>
                     <li><b>Object Oriented Programming (OOP):</b> objects implemented to store and manipulate data</li>
                     <li><b>Object:</b> identity (stored memory), state (variables), and behaviour (methods)</li>
                     <li><b>Class:</b> blueprint definition of object where they are instantiated from</li>
-                    <li><b>Constructor:</b> method used to create new object with new keyword, same name as class</li>
+                    <li><b>Constructor:</b> method used to create new object with <code class="text-danger">new</code> keyword, same name as class</li>
                     <ul>
                         <li><b>Overloading:</b> several constructors for same class with different parameters</li>
                     </ul>
                 </ul>
             </div>
-            <div class="container bg-dark code-block" style="margin-top: 2%;">
-                <div class="container bg-light">
-                    <span type="button" onClick="console.log('yo')">Copy</span>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Elemental.java</code></span>
+                    <span class="copy-button" type="button" onClick="copy('oop1')">Copy</span>
                 </div>
-                <pre class="text-white">
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="oop1">
 public Elemental(String name, int age, double maxMana, double maxHealth, double mana, 
 double health, String elementalForm, boolean isFriendly) {
     this.name = name;
@@ -96,56 +112,80 @@ public Elemental() {
     health = 100;
     elementalForm = "Qarri";
     isFriendly = false;
-}                     
-                </pre>
+}</pre>
             </div>
             
-            <div class="container" style="width: 90%;">
-                <p>Constructors from the <code class="text-info">Hyrmus</code> class from the Creation Story assignment are overloaded with a custom constructor, with parameters for each field, a default constructor, and a special constructor with only one parameter to be used within the program.</p>
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>Constructors from the <code class="text-danger">Hyrmus</code> class from the Creation Story assignment are overloaded with a custom constructor, with parameters 
+                    for each field, a default constructor, and a special constructor with only one parameter to be used within the program.</p>
             </div>
 
-            <div class="container" style="margin-top: 2%; width: 90%;">
+            <!-- Text -->
+            <div class="container tutorial-content-container">
                 <ul class="content-list">
                     <li><b>Static:</b> keyword for parts of class independent from objects, procedural programming</li>
                     <ul>
-                        <li><code class="text-info">static</code> variables only exist once across all objects of class</li>
-                        <li><code class="text-info">static</code> methods can be accessed without an object</li>
+                        <li><code class="text-danger">static</code> variables only exist once across all objects of class</li>
+                        <li><code class="text-danger">static</code> methods can be accessed without an object</li>
                         <li>All non-static members accessed using dot notation</li>
                     </ul>
                 </ul>
             </div>
-            <div class="container bg-dark" style="margin-top: 2%; width: 90%;">
-                <pre class="text-white">
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Hyrmus.java</code></span>
+                    <span class="copy-button" type="button" onClick="copy('oop2')">Copy</span>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="oop2">
 private static String[] gasses = new String[0];
 
-/* snip */
+/* Constructor and other methods not shown */
 
 public static String getGasses(){
     String message = "Current Gasses in the atmosphere:" + "\n";
     for (int i = 0; i &lt; gasses.length; i++)
         message = message.concat(gasses[i] + "\n");
     return message;
-}       
-                </pre>
-            </div>
-            <div class="container" style="width: 90%;">
-                <p>Snippet from <code class="text-info">Hyrmus</code> class in Creation Story assignment. The <code class="text-info">gasses</code> variable is set to static to reflect there only being one composition of gasses in the atmosphere that should change across all objects of the class. As such, the <code class="text-info">getGasses</code> accessor is also a static method to be called by the class in general instead of any one object.</p>
+}</pre>
             </div>
 
-            <div class="container" style="margin-top: 2%; width: 90%;">
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>Snippet from <code class="text-danger">Hyrmus</code> class in Creation Story assignment. The <code class="text-danger">gasses</code> variable is set to static to reflect 
+                    there only being one composition of gasses in the atmosphere that should change across all objects of the class. As such, the <code class="text-danger">getGasses</code> 
+                    accessor is also a static method to be called by the class in general instead of any one object.</p>
+            </div>
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
                 <ul class="content-list">
                     <li><b>Encapsulation:</b> security by controlling outside access to class members</li>
                     <ul>
-                        <li><code class="text-info">private</code> only accessed within class, <code class="text-info">public</code> can also be accessed outside class</li>
+                        <li><code class="text-danger">private</code> only accessed within class, <code class="text-danger">public</code> can also be accessed outside class</li>
                         <li>Prevents direct access of data from outside, can only access through get (accessors) and set (mutator) methods</li>
                     </ul>
                 </ul>
             </div>
-            <div class="container bg-dark" style="margin-top: 2%; width: 90%;">
-                <pre class="text-white">
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Airplane.java</code></span>
+                    <span class="copy-button" type="button" onClick="copy('oop3')">Copy</span>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="oop3">
 private int passengers;
 
-/* snip */
+/* Constructor and other methods not shown */
 
 public void loadPass(int newPass) {
     passengers += newPass;
@@ -157,14 +197,19 @@ public void unloadPass() {
 
 public int getPassengers() {
     return passengers;
-}                        
-                </pre>
-            </div>
-            <div class="container" style="width: 90%;">
-                <p>Snippet from <code class="text-info">Airplane</code> class assignment. The instance variable <code class="text-info">passengers</code>, storing the number of passengers on a plane, is set to <code class="text-info">private</code>. It can only be accessed by the public accessor <code class="text-info">getPassengers</code> and the mutators <code class="text-info">loadPass()</code> and <code class="text-info">unloadPass()</code>, which limit how the value can be changed from outside the class.</p>
+}</pre>
             </div>
 
-            <div class="container" style="margin-top: 2%; width: 90%;">
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>Snippet from <code class="text-danger">Airplane</code> class assignment. The instance variable <code class="text-danger">passengers</code>, 
+                    storing the number of passengers on a plane, is set to <code class="text-danger">private</code>. It can only be accessed by the public accessor 
+                    <code class="text-danger">getPassengers</code> and the mutators <code class="text-danger">loadPass()</code> and <code class="text-danger">unloadPass()</code>, 
+                    which limit how the value can be changed from outside the class.</p>
+            </div>
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
                 <ul class="content-list">
                     <li><b>Unified Modeling Language (UML):</b> a standard representation of a class</li>
                     <ul>
@@ -173,17 +218,22 @@ public int getPassengers() {
                     </ul>
                 </ul>
             </div>
-            <div class="container" style="width: 90%;">
+
+            <!-- Image -->
+            <div class="container">
                 <img src="assets/uml.png" style="width: 99%;">            
             </div>
-            <div class="container" style="width: 90%;">
+
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
                 <p>UML of a Warrior class from my first open book test. All variables are private with a leading minus sign and all methods are public with a leading plus. The data type of each variable is labeled accordingly, such as String for name. The parameter names and types, as well as the return types for each method are also labeled, including those of the class constructor.</p>
             </div>
         </div>
 
+        <!-- JavaScript Links -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

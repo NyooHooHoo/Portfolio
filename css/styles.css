@@ -1,24 +1,40 @@
-body {
-    background-color: #1a1918;
+:root {
+    --orange: #ffb663;
+    --dark-orange: #e9a250;
+}
+
+h1 {
+    text-align: center;
 }
 
 nav {
-    background-color: #ffb663;
+    background-color: var(--orange);
+}
+
+code {
+    font-style: normal;
+}
+
+.caption {
+    font-style: italic;
+}
+
+.nav-item, .dropdown-item, .navbar-brand, pre, img {
+    user-select: none;
+}
+
+.container {
+    width: 90%;
 }
 
 .tutorial-main-container {
     margin-top: 100px; 
     margin-bottom: 5%;
-    width: 90%;
 }
 
 .tutorial-content-container {
     margin-top: 2%; 
-    width: 90%;
-}
-
-.code-block {
-    border-radius: 15px;
+    text-align: center;
 }
 
 .content-list li:not(:last-child) {
@@ -27,4 +43,47 @@ nav {
 
 .content-list li:not(:first-child) {
     margin-top: 20px;
+}
+
+.code-block {
+    border-radius: 15px;
+    padding-left: 0%;
+    padding-right: 0%;
+    width: 80%;
+}
+
+.code-text {
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+.copy-container {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    width: 100%;
+    background-color: var(--orange);
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0%;
+    padding-left: 0%;
+}
+
+.copy-text, .copy-button {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: inline-block;
+    user-select: none;
+}
+
+.copy-button {
+    border-top-right-radius: 14px;
+}
+
+.copy-button:hover {
+    background-color: var(--dark-orange);
+    transition-duration: 0.25s;
 }
