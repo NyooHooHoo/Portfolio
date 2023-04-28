@@ -15,10 +15,6 @@ code {
     font-style: normal;
 }
 
-.caption {
-    font-style: italic;
-}
-
 .nav-item, .dropdown-item, .navbar-brand, pre, img {
     user-select: none;
 }
@@ -34,22 +30,22 @@ code {
 
 .tutorial-content-container {
     margin-top: 2%; 
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.caption {
+    font-style: italic;
     text-align: center;
-}
-
-.content-list li:not(:last-child) {
-    margin-bottom: 10px;
-}
-
-.content-list li:not(:first-child) {
-    margin-top: 20px;
+    margin-bottom: 5%;
 }
 
 .code-block {
     border-radius: 15px;
     padding-left: 0%;
     padding-right: 0%;
-    width: 80%;
+    width: 90%;
 }
 
 .code-text {
@@ -86,4 +82,19 @@ code {
 .copy-button:hover {
     background-color: var(--dark-orange);
     transition-duration: 0.25s;
+}
+
+/* Tooltip text */
+.tooltiptext {
+    visibility:hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
 }
