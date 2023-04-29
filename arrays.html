@@ -53,14 +53,108 @@
 
         <!-- Main Content -->
         <div class="container tutorial-main-container">
+
+            <!-- Title -->
             <div class="container tutorial-content-container">
-                <h1>Under construction!</h1>
+                <h1>Arrays</h1>
+            </div>    
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
+                <p>
+                    An <b>array</b> is a data structure that stores multiple values of the same data type under one name in memory. These individual values, or “elements,” are accessed with
+                    the name of the array and the <b>index</b> of a specific element in square brackets. Arrays are always <b>zero-indexed</b>, so the first element will have index 0,
+                    second index 1, and so on (e.g. <code class="text-danger">arr[0]</code> of <code class="text-danger">['a', 'b', 'c']</code> is <code class="text-danger">'a'</code>). 
+                    The main benefit of arrays reduce the number of individual variables needed to store large amounts of data. They are declared and initialized using the following syntax:<br><br>
+                    
+                    <code class="text-danger"><i>anyType</i> [] <i>arrayName</i> = new <i>anyType</i>[<i>length</i>];</code> OR <code class="text-danger">{<i>value1, value2, etc.</i>};</code><br><br>
+
+                    Elements initialized using the first method have the default values <code class="text-danger">0</code> for numbers, <code class="text-danger">false</code> for booleans, 
+                    and <code class="text-danger">null</code> for objects such as <code class="text-danger">String</code>. The length of an array is a public attribute that can be accessed directly by 
+                    <code class="text-danger"><i>arrayName</i>.length</code>. <b>Parallel arrays</b> are several arrays of same length that work together to store related data that may be of different types,
+                    and are a further application of the efficient nature of arrays. 
+                </p>
             </div>
-            <div class="container tutorial-content-container">
-                <p>Check out the OOP and Inheritance pages under Tutorials.</p>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">DogRatingsParallel.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('arr1')">
+                        Copy
+                        <span class="tooltiptext" id="arr1-msg">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="arr1">
+public DogRatingsParallel() {
+    dogBreeds = new String[]{"Golden Retriever", "Pomeranian", "Poodle", "Corgi", "German Shepherd", "Chihuahua", "Bulldog", "Samoyed", "Dachshund", "Teddy Bear Dog"};
+    maintenance = new int[]{5, 5, 3, 13, 4, -5, 10, 7, 10, 3};
+    energy = new int[]{11, 7, 3, 11, 10, 0, -2, 9, 5, 4};
+    lifespan = new int[]{5, 8, 4, 11, 4, -3, 3, 8, 6, 7};
+    amicability = new int[]{12, 10, 3, 900000, 7, -12, 2, 9, 8, 9};
+    appearance = new int[]{10, 10, 1, 100, 6, -40, -5, 9, 12, 30};
+}</pre>
             </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    Constructor from Ratings assignment, demonstrating parallel arrays with a <code class="text-danger">String</code> array of ten dog breeds and <code class="text-danger">int</code> arrays for each of the five rating categories. 
+                    Each integer array has ten values that correspond to each breed (e.g. index <code class="text-danger">0</code> of each array correspond to <code class="text-danger">"Golden Retriver"</code>).
+                </p>
+            </div>
+            
+            <!-- Text -->
             <div class="container tutorial-content-container">
-                <img src="assets/milo.png" style="margin: 5%">
+                <p>
+                    A <b>two-dimensional (2D)</b> array is an array of arrays that can organize data into a grid of <b>rows</b> and <b>columns</b> instead of only a linear, or one-dimensional (1D), format. 
+                    The declaration and initialization of 2D arrays is very similar to 1D ones.<br><br>
+
+                    <code class="text-danger"><i>anyType</i> [][] <i>arrayName</i> = new <i>anyType</i>[<i>rows</i>][<i>columns</i>];</code> OR 
+                    <code class="text-danger">{{<i>value1, value2, etc.</i>}, {<i>value3, value4, etc.</i>}, ...};</code><br><br>
+
+                    While 1D arrays can easily be <b>traversed</b> (loop through every value) using a single loop, 2D arrays must be travered using a <b>nested loop</b>, a loop within another loop.  
+                </p>
+            </div>
+
+                <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">DogRatings2D.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('arr2')">
+                        Copy
+                        <span class="tooltiptext" id="arr2-msg">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="arr2">
+public DogRatings2D(Scanner d) {
+    dogBreeds = new String[10];
+    ratings = new int[5][10];
+    categories = new String[]{"maintenance", "energy", "lifespan", "amicability", "appearance"};
+    for (int i = 0; i &lt; dogBreeds.length; i++) {
+        dogBreeds[i] = d.nextLine();
+        for (int j = 0; j &lt; dogBreeds[i].length; j++) {
+            ratings[j][i] = d.nextInt();
+        /* Rest of loop not shown */
+        }
+    }
+}</pre>
+            </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    Constructor from another class in Ratings assignment, demonstrating 2D arrays with the variable <code class="text-danger">ratings</code> initialized with 5 rows 
+                    for categories, which used to be individual 1D arrays, and 10 columns for scores. The 2D array is then traversed with a nested <code class="text-danger">for</code>-loop to initialize its elements 
+                    with values read from a file. The check <code class="text-danger">i &lt; dogBreeds.length</code> represents limit of rows and <code class="text-danger">j &lt; dogBreeds[i].length</code> in the inner loop 
+                    represents the limit within each row.
+                </p>
             </div>
         </div>
 
