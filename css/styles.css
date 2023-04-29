@@ -88,7 +88,6 @@ code {
     transition-duration: 0.25s;
 }
 
-/* Tooltip text */
 .tooltiptext {
     visibility:hidden;
     width: 120px;
@@ -97,8 +96,6 @@ code {
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-
-    /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
 }
@@ -108,15 +105,15 @@ code {
     justify-content: space-between;
     margin: 0;
     position: absolute;
-    top: 47%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 75%;
 }
 
 .name {
     text-align: left; 
-    font-size: 7rem;
+    font-size: 12dvh;
 }
 
 .parent {
@@ -128,12 +125,14 @@ code {
 
 .avatar {
     position: relative;
+    width: 100%;
     top: 0;
     left: 0;
 }
 
 .milo {
     position: absolute;
-    top: 66%;
-    left: 5%;
+    width: 30%;
+    top: 60%;
+    left: 3%;
 }
