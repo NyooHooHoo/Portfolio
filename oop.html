@@ -44,6 +44,9 @@
                             <a class="dropdown-item" href="recursion.html">Recursion</a>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bibliography.html">Bibliography</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -59,19 +62,21 @@
             <!-- Text -->
             <div class="container tutorial-content-container">
                 <p>
-                    <b>Procedural Programming:</b> most basic, one main program runs start to finish
-                    <b>Object Oriented Programming (OOP):</b> objects implemented to store and manipulate data
-                    <b>Object:</b> identity (stored memory), state (variables), and behaviour (methods)
-                    <b>Class:</b> blueprint definition of object where they are instantiated from
-                    <b>Constructor:</b> method used to create new object with <code class="text-danger">new</code> keyword, same name as class
-                    <b>Overloading:</b> several constructors for same class with different parameters
+                    <b>Procedural Programming</b> is a basic paradigm of programming taught to beginners, where one main program simply runs start to finish.
+                    In Java, a more complex but very useful form of programming used is <b>Object Oriented Programming (OOP)</b>, where objects implemented to 
+                    store and manipulate data. <br><br> An <b>Object</b> is any set of data representing real-world objects or abstract concepts, definted by
+                    it's identity (stored memory), state (variables), and behaviour (methods). All objects are instances of a <b>Class</b>, blueprint definitions 
+                    of objects' structures written by a programmer. Objects are instantiated from classes using a <b>Constructor</b>, a method with the same 
+                    name as the class itself that creates a new object in memory when used with the <code class="text-danger">new</code> keyword. All constructors 
+                    may accept certain parameters that allow users to specify the data stored in the new object. <b>Overloading</b> is the use of several 
+                    constructors for same class with different combinations of such parameters.
                 </p>
             </div>
 
             <!-- Code Block -->
             <div class="container bg-dark code-block">
                 <!-- Code Block Header -->
-                <div class="container copy-container" id="oop1-container">
+                <div class="container copy-container">
                     <span class="copy-text"><code class="text-dark">Elemental.java</code></span>
                     <div class="copy-button" type="button" onClick="copy('oop1')">
                         Copy
@@ -118,17 +123,20 @@ public Elemental() {
             
             <!-- Caption -->
             <div class="container tutorial-content-container caption">
-                <p>Constructors from the <code class="text-danger">Hyrmus</code> class from the Creation Story assignment are overloaded with a custom constructor, with parameters 
-                    for each field, a default constructor, and a special constructor with only one parameter to be used within the program.</p>
+                <p>
+                    Constructors from the <code class="text-danger">Elemental</code> class from the Creation Story assignment are overloaded with a custom constructor, with parameters 
+                    for each field, a default constructor, and a special constructor with only one parameter to be used within the program. Each of these can be used to instantiate
+                    a unique <code class="text-danger">Elemental</code> object (e.g. <code class="text-danger">Elemental e = new Elemental();</code>)
+                </p>
             </div>
 
             <!-- Text -->
             <div class="container tutorial-content-container">
                 <p>
-                    <b>Static:</b> keyword for parts of class independent from objects, procedural programming
-                    <code class="text-danger">static</code> variables only exist once across all objects of class
-                    <code class="text-danger">static</code> methods can be accessed without an object
-                    All non-static members accessed using dot notation
+                    <b>Static</b> members are variables and methods of a class independent from its objects, definted using the <code class="text-danger">static</code> 
+                    keyword. Static variables only exist once across all objects of class, and when it's value changes all objects are affected. Static methods can be 
+                    accessed directly from the class without an object to call it from. All non-static members of a class are accessed using dot notation 
+                    (<code class="text-danger"><i>objectName</i>.<i>memberName</i></code>).
                 </p>
             </div>
 
@@ -137,7 +145,10 @@ public Elemental() {
                 <!-- Code Block Header -->
                 <div class="container copy-container">
                     <span class="copy-text"><code class="text-dark">Hyrmus.java</code></span>
-                    <span class="copy-button" type="button" onClick="copy('oop2')">Copy</span>
+                    <div class="copy-button" type="button" onClick="copy('oop2')">
+                        Copy
+                        <span class="tooltiptext" id="oop2-msg">Copied!</span>
+                    </div>
                 </div>
 
                 <!-- Code Text -->
@@ -156,17 +167,19 @@ public static String getGasses(){
 
             <!-- Caption -->
             <div class="container tutorial-content-container caption">
-                <p>Snippet from <code class="text-danger">Hyrmus</code> class in Creation Story assignment. The <code class="text-danger">gasses</code> variable is set to static to reflect 
-                    there only being one composition of gasses in the atmosphere that should change across all objects of the class. As such, the <code class="text-danger">getGasses</code> 
-                    accessor is also a static method to be called by the class in general instead of any one object.</p>
+                <p>
+                    Snippet from <code class="text-danger">Hyrmus</code> class in Creation Story assignment. The <code class="text-danger">gasses</code> variable is set to static to reflect 
+                    there only being one composition of gasses in the atmosphere that should change across all objects of the class. As such, the <code class="text-danger">getGasses()</code> 
+                    accessor is also a static method to be called by the class in general instead of any one object (i.e. <code class="text-danger">Hyrmus.getGasses()</code>).
+                </p>
             </div>
 
             <!-- Text -->
             <div class="container tutorial-content-container">
                 <p>
-                    <b>Encapsulation:</b> security by controlling outside access to class members
-                    <code class="text-danger">private</code> only accessed within class, <code class="text-danger">public</code> can also be accessed outside class
-                    Prevents direct access of data from outside, can only access through get (accessors) and set (mutator) methods
+                    <b>Encapsulation</b> is the process of controlling access to class members to endure data security. Variables and methods with the <code class="text-danger">private</code> 
+                    keyword can only accessed within their own class, while <code class="text-danger">public</code> ones can also be accessed outside the class. Without direct outside access, 
+                    get (accessors) and set (mutator) methods are implemented <code class="text-danger">private</code> fields when needed.
                 </p>
             </div>
 
@@ -175,7 +188,10 @@ public static String getGasses(){
                 <!-- Code Block Header -->
                 <div class="container copy-container">
                     <span class="copy-text"><code class="text-dark">Airplane.java</code></span>
-                    <span class="copy-button" type="button" onClick="copy('oop3')">Copy</span>
+                    <div class="copy-button" type="button" onClick="copy('oop3')">
+                        Copy
+                        <span class="tooltiptext" id="oop3-msg">Copied!</span>
+                    </div>
                 </div>
 
                 <!-- Code Text -->
@@ -208,9 +224,9 @@ public int getPassengers() {
             <!-- Text -->
             <div class="container tutorial-content-container">
                 <p>
-                    <b>Unified Modeling Language (UML):</b> a standard representation of a class
-                    Shows class name and all variables and methods (with parameters and return)
-                    Plus (+) and minus (-) signs represent public and private
+                    <b>Unified Modeling Language (UML)</b> is a standard representation of a class that can be applied to any object-oriented programming languages, not just Java.
+                    A UML table shows class name and all its variables and methods, along with parameters and return values. Plus (+) and minus (-) signs represent 
+                    <code class="text-danger">public</code> and <code class="text-danger">private</code> members, respectively. 
                 </p>
             </div>
 
@@ -225,7 +241,6 @@ public int getPassengers() {
             </div>
         </div>
 
-        <!-- JavaScript Links -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

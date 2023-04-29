@@ -98,3 +98,38 @@ code {
     position: absolute;
     z-index: 1;
 }
+
+.home-main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.name {
+    text-align: left; 
+    font-size: 7rem;
+}
+
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+    width:fit-content;
+  }
+
+.avatar {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.milo {
+    position: absolute;
+    top: 66%;
+    left: 5%;
+}
