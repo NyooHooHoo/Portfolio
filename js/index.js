@@ -7,4 +7,3 @@ function copy(id) {
     }, 700);
     $('#' + id + '-msg').fadeIn(0);
 }
-

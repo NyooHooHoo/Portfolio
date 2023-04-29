@@ -120,7 +120,7 @@ public DogRatingsParallel() {
                 </p>
             </div>
 
-                <!-- Code Block -->
+            <!-- Code Block -->
             <div class="container bg-dark code-block">
                 <!-- Code Block Header -->
                 <div class="container copy-container">
@@ -155,6 +155,23 @@ public DogRatings2D(Scanner d) {
                     with values read from a file. The check <code class="text-danger">i &lt; dogBreeds.length</code> represents limit of rows and <code class="text-danger">j &lt; dogBreeds[i].length</code> in the inner loop 
                     represents the limit within each row.
                 </p>
+            </div>
+
+            <!-- Title -->
+            <div class="container tutorial-content-container">
+                <h4>Common Mistakes</h4>
+            </div>  
+            
+            <!-- List -->
+            <div class="container tutorial-content-container">
+                <ul>
+                    <li>Accessing the length of an array as a method like Strings <code class="text-danger"><i>arrayName</i>.length()</code> instead of as an attribute <code class="text-danger"><i>arrayName</i>.length</code>.</li>
+                    <li>Forgetting zero-indexing and using <code class="text-danger">1</code> for the first element instead of <code class="text-danger">0</code></li>
+                    <li>
+                        Causing an <code class="text-danger">ArrayIndexOutOfBoundsException</code> by using <code class="text-danger"><i>arrayName</i>.length</code> as the last index instead of <code class="text-danger"><i>arrayName</i>.length - 1</code>
+                        or using a <code class="text-danger">i &lt;= arrayName.length</code> in a loop instead of <code class="text-danger">i &lt; arrayName.length</code>.
+                    </li>
+                </ul>
             </div>
         </div>
 

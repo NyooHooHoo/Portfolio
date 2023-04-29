@@ -7,6 +7,10 @@ h1 {
     text-align: center;
 }
 
+ul {
+    text-align: left;
+}
+
 nav {
     background-color: var(--orange);
 }
@@ -50,7 +54,7 @@ code {
 
 .code-text {
     padding-left: 2%;
-    padding-right: 2%;
+    margin-right: 2%;
     padding-bottom: 2%;
 }
 

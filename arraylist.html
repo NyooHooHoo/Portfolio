@@ -53,14 +53,140 @@
 
         <!-- Main Content -->
         <div class="container tutorial-main-container">
+
+            <!-- Title -->
             <div class="container tutorial-content-container">
-                <h1>Under construction!</h1>
+                <h1>ArrayList</h1>
             </div>
+
+            <!-- Text -->
             <div class="container tutorial-content-container">
-                <p>Check out the OOP and Inheritance pages under Tutorials.</p>
+                <p>
+                    One limitation of default arrays in Java is that the length at which they are initialized can never be changed, making it difficult to add or remove elements from the array. However, if we import the 
+                    <code class="text-danger">java.util</code> package into our code, we can use the <b>ArrayList</b> class instead, which allows for resizable lists of elements. After being imported, an 
+                    <code class="text-danger">ArrayList</code> can be initialized using the following syntax: <br><br>
+                    
+                    <code class="text-danger">ArrayList&lt;E&gt; <i>name</i> = new ArrayList&lt;E&gt; (<i>capacity</i>)</code> <br><br>
+
+                    <code class="text-danger">E</code> is the class that all elements of the list will be objects of, and <code class="text-danger"><i>capacity</i></code> is the maximum number of elements the list can hold,
+                    which is <code class="text-danger">10</code> by default.
+                    This is different from the number of elements actually stored in the list, which can be accessed by <code class="text-danger"><i>name</i>.size()</code>. The capacity of an ArrayList automatically 
+                    doubles every time the number of elements reaches it. Some other basic methods for the <code class="text-danger">ArrayList</code> class are <code class="text-danger">add()</code>, which adds an element to
+                    the end of the list by default or a specified index, and <code class="text-danger">get()</code> which accesses the element at a specified index. 
+                </p>
             </div>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Bridge.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('arl1')">
+                        Copy
+                        <span class="tooltiptext" id="arl1-msg">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="arl1">
+private String deckString;
+private ArrayList&lt;String&gt; deck, player1, player2, player3, player4;
+
+public Bridge() {
+    deckString = "AS2S3S4S5S6S7S8S9STSJSQSKSAH2H3H4H5H6H7H8H9HTHJHQHKHAD2D3D4D5D6D7D8D9DTDJDQDKDAC2C3C4C5C6C7C8C9CTCJCQCKC";
+    player1 = new ArrayList&lt;&gt;();
+    player2 = new ArrayList&lt;&gt;();
+    player3 = new ArrayList&lt;&gt;();
+    player4 = new ArrayList&lt;&gt;();
+    deck = new ArrayList&lt;&gt;();
+    for (int i = 0; i &lt; deckString.length(); i += 2)
+        deck.add(deckString.substring(i, i + 2));
+}</pre>
+            </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    Instance variables and class constructor for the <code class="text-danger">Bridge</code> class from ArrayList assignment. Five <code class="text-danger">ArrayLists</code> variables storing <code class="text-danger">String</code> 
+                    objects are initialized with default capacity. The <code class="text-danger">add()</code> method is used to populate <code class="text-danger">deck</code> from <code class="text-danger">deckString</code>.
+                </p>
+            </div>
+
+            <!-- Text -->
             <div class="container tutorial-content-container">
-                <img src="assets/milo.png" style="margin: 5%">
+                <p>
+                    ArrayLists only hold object types such as <code class="text-danger">Integer</code> or <code class="text-danger">Double</code> , not primitive data types such as <code class="text-danger">int</code> or 
+                    <code class="text-danger">double</code>, but Java automatically converts primitive data types to objects when passed into an ArrayList in a process called <b>autoboxing</b>.
+
+                    For example <code class="text-danger">list.add(12)</code> would run without error on a variable declared as <code class="text-danger">ArrayList&lt;Integer&gt; list;</code> even though a primitive 
+                    <code class="text-danger">int</code> is being passed as an <code class="text-danger">Integer</code> object. <br><br>
+
+                    The <b>For-each loop</b> is a new enhanced <code class="text-danger">for</code> loop introduced in Java 5 that allows for more convenient and readable traversal of arrays and ArrayLists. This type of loop creates a variable directly 
+                    referencing the values of elements themselves, instead of looping through index values and accessing elements in the loop body. This is done using the syntax <code class="text-danger">for (<i>type</i> element : arr)</code>.
+                </p>
+            </div>
+        
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Bridge.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('arl2')">
+                        Copy
+                        <span class="tooltiptext" id="arl2-msg">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="arl2">
+for (String card : player) {
+    denomination = card.charAt(0);
+    suit = card.charAt(1);
+    
+    if (denomination == 'A')
+        score += 4;
+    else if (denomination == 'K')
+        score += 3;
+    else if (denomination == 'Q')
+        score += 2;
+    else if (denomination == 'J')
+        score += 1;
+    
+    if (suit == 'S')
+        spades.add(card);
+    else if (suit == 'H')
+        hearts.add(card);
+    else if (suit == 'D')
+        diamonds.add(card);
+    else if (suit == 'C')
+        clubs.add(card);
+}</pre>
+            </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    Implementation of for-each loop in <code class="text-danger">Bridge</code> class from ArrayList assignment. In an <code class="text-danger">String</code> ArrayList <code class="text-danger">player</code> passed into the method, 
+                    each value is read and stored in the new <code class="text-danger">String</code> variable <code class="text-danger">card</code>, where it can be used in the loop body without the need for indexing like a standard for loop traversal.                </p>
+            </div>
+
+            <!-- Title -->
+            <div class="container tutorial-content-container">
+                <h4>Common Mistakes</h4>
+            </div>  
+
+            <!-- List -->
+            <div class="container tutorial-content-container">
+                <ul>
+                    <li>Forgetting to <code class="text-danger">import java.util.*;</code> at the top of the program before using <code class="text-danger">ArrayList</code>.</li> 
+                    <li>Initializing with a primitive data type such as <code class="text-danger">ArrayList&lt;int&gt;</code> instead of a class such as <code class="text-danger">ArrayList&lt;Integer&gt;</code>.</li>
+                    <li>Using <code class="text-danger">length</code> or <code class="text-danger">length()</code> to access the number of elements in an <code class="text-danger">ArrayList</code> instead of <code class="text-danger">size()</code>.</li>
+                    <li>Using square brackets <code class="text-danger">list[0]</code> to access an element in an <code class="text-danger">ArrayList</code> instead of the method <code class="text-danger">list.get(0)</code>.</li>
+                    <li>
+                        Treating the looping variable in a for-each loop as an index instead of an element value. For example,
+                        <code class="text-danger">for (int i : list) System.out.println(list.get(i));</code> should simply print <code class="text-danger">i</code> instead.
+                    </li>
+                </ul>
             </div>
         </div>
 
