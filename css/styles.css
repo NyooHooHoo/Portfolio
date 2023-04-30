@@ -157,6 +157,7 @@ code {
     background-color: var(--orange);
     border-radius: 15px;
     transition-duration: 0.3s;
+    position: relative;
 }
 
 .project:hover {
@@ -167,14 +168,15 @@ code {
     max-width: 100%;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    border: 20px solid var(--orange);
+    border-bottom-width: 12px;
 }
 
 .project-text {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3%;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
     text-align: left;
     word-wrap: break-word;
 }
@@ -182,4 +184,11 @@ code {
 .project-name {
     font-size: 2rem;
     margin-bottom: 3%;
+}
+
+.project-footer {
+    position: absolute;
+    bottom: 0%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
