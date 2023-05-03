@@ -192,3 +192,58 @@ code {
     padding-top: 5%;
     padding-bottom: 5%;
 }
+
+.about-me-main {
+    margin-top: 100px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}
+
+.bio {
+    margin-top: 50px;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.about-img-link {
+    grid-column: span 2;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.about-me-img {
+    width: 100%;
+    border-radius: 15px;
+    transition-duration: 0.3s;
+}
+
+.about-me-img:hover {
+    transform: scale(1.02);
+}
+
+.bio-text {
+    grid-column: span 4;
+}
+
+.bio-box {
+    background-color: var(--orange);
+    border-radius: 15px;
+    grid-column: span 3;
+    padding: 3%;
+    transition-duration: 0.3s;
+}
+
+.bio-box:hover {
+	transform: scale(1.02);
+}
+
+.sleeping-milo {
+    padding: 2%;
+}
+
+.about-box-title {
+    margin-bottom: 2%;
+}
