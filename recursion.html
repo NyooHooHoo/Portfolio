@@ -25,13 +25,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="projects.html">Projects</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tutorials
                         </a>
@@ -51,14 +51,70 @@
 
         <!-- Main Content -->
         <div class="container tutorial-main-container">
+
+            <!-- Title -->
             <div class="container tutorial-content-container">
-                <h1>Under construction!</h1>
+                <h1>Recursion</h1>
+            </div>   
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
+                <p>
+                    <b>Recursion</b> is a technique in Java where a method calls itself within its own body, 
+                    turning them into <b>recursive methods</b>. By doing this, a recursive method is able to
+                    solve large and complex tasks by continuously divinding them into smaller tasks. 
+                    To do this, a recursive method must be able to handle two cases: the <b>base case</b> 
+                    and the <b>recursive case</b>. <br><br>
+                    
+                    The base case represents the smallest possible division
+                    of a task, when the method no longer calls itself. This is crucial to preventing the 
+                    method from preventing the the method from calling infinitely. On the other hand, the 
+                    recursive case handles all other cases where the method does call itself again,
+                    continuing the recursion.
+                </p>
             </div>
-            <div class="container tutorial-content-container">
-                <p>Check out the OOP, Inheritance, Array, and ArrayList tutorials.</p>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Recursion1.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('inh1')">
+                        Copy
+                        <span class="tooltiptext" id="inh1-msg">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="inh1">
+java</pre>
             </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    wow.
+                </p>
+            </div>
+
+            <!-- Title -->
             <div class="container tutorial-content-container">
-                <img src="assets/milo.png" style="margin: 5%">
+                <h4>Common Mistakes</h4>
+            </div>  
+            
+            <!-- List -->
+            <div class="container tutorial-content-container">
+                <ul>
+                    <li>
+                        Forgetting to define a base case in a recursive method, causing it to call itself 
+                        infinitely and triggering a <b>stack overflow</b>, an error where the computer
+                        runs out of memory to store all the method calls. 
+                    </li>
+                    <li>
+                        Not updating the values passed into the method each recursive call to reach the base 
+                        case, causing a stack overflow even if a base case is defined. 
+                    </li>
+                </ul>
             </div>
         </div>
 

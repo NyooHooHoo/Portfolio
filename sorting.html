@@ -25,13 +25,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="projects.html">Projects</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Tutorials
                         </a>
@@ -51,14 +51,54 @@
 
         <!-- Main Content -->
         <div class="container tutorial-main-container">
+
+            <!-- Title -->
             <div class="container tutorial-content-container">
-                <h1>Under construction!</h1>
+                <h1>Searching & Sorting</h1>
+            </div>   
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
+                <p>
+                    Hello this is a test.
+                </p>
             </div>
-            <div class="container tutorial-content-container">
-                <p>Check out the OOP, Inheritance, Array, and ArrayList tutorials.</p>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('inh1')">
+                        Copy
+                        <span class="tooltiptext" id="inh1-msg">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="inh1">
+java</pre>
             </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    wow.
+                </p>
+            </div>
+
+            <!-- Video -->
             <div class="container tutorial-content-container">
-                <img src="assets/milo.png" style="margin: 5%">
+                <iframe class="video" src="https://www.youtube.com/embed/H8vgx1rbTto"></iframe>
+            </div>
+
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    A video demonstration of the <b>Timsort</b> sorting algorithm, a combination of the 
+                    insertion sort and merge sort with countless real-world applications due to its 
+                    efficiency.
+                </p>
             </div>
         </div>
 

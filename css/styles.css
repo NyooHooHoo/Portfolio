@@ -39,6 +39,13 @@ code {
     justify-content: center;
 }
 
+.biblio-content-container {
+    margin-top: 2%; 
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: left;
+}
+
 .caption {
     font-style: italic;
     text-align: center;
@@ -205,7 +212,7 @@ code {
     margin-top: 50px;
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .about-img-link {
@@ -246,4 +253,12 @@ code {
 
 .about-box-title {
     margin-bottom: 2%;
+}
+
+.video {
+    width: 100%;
+    /* height: 436px; */
+    height: 545px;
+    border: none;
+    border-radius: 15px;
 }
