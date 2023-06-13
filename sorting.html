@@ -28,8 +28,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="isp.html">Final ISP</a>
+                            <a class="dropdown-item" href="projects.html">Other Projects</a>
+                        </div>
                     </li>
                     <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,7 +66,16 @@
             <!-- Text -->
             <div class="container tutorial-content-container">
                 <p>
-                    Hello this is a test.
+                    Two important concepts that are often used in programming are <b>searching</b> and <b>sorting</b>.
+                    Firstly, searching is the process of looking through the data stored in an <a href="arrays.html">Array</a>, 
+                    <a href="arraylist.html">ArrayList</a>, or other data structure to find a specific value. There are two 
+                    common <b>algorithms</b>, or sets of instructions, used to perform a search: <b>linear search</b>
+                    and <b>binary search</b>.<br><br>
+
+                    A <b>linear search</b> is the simplest searching algorithm, checking every element in 
+                    the array or list until the desired value is found. As such, the number of checks that must
+                    be made is directly proportional to the size of the list. This level of efficiency is
+                    expressed by programmers in <b>Big-O notation</b> as <b><i>O(n)</i></b>. 
                 </p>
             </div>
 
@@ -68,22 +83,128 @@
             <div class="container bg-dark code-block">
                 <!-- Code Block Header -->
                 <div class="container copy-container">
-                    <span class="copy-text"><code class="text-dark">.java</code></span>
-                    <div class="copy-button" type="button" onClick="copy('inh1')">
+                    <span class="copy-text"><code class="text-dark">MaCSBook.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('sort1')">
                         Copy
-                        <span class="tooltiptext" id="inh1-msg">Copied!</span>
+                        <span class="tooltiptext" id="sort1-msg">Copied!</span>
                     </div>
                 </div>
 
                 <!-- Code Text -->
-<pre class="text-white code-text" id="inh1">
-java</pre>
+<pre class="text-white code-text" id="sort1">
+public void changeMark(int number) throws IOException {
+    if (numbers.contains(number)) {
+        int studentIndex = 0;
+        for (int i = 0; i &lt; numbers.size(); i++) {
+            if (numbers.get(i) == number) {
+                studentIndex = i;
+                break;
+            }
+        }
+        // rest of if body
+    }
+    else {
+        System.out.println("This student number does not exist in this MaCS Book.\n");
+    }
+}</pre>
             </div>
             
             <!-- Caption -->
             <div class="container tutorial-content-container caption">
                 <p>
-                    wow.
+                    The <code class="text-danger">changeMark()</code> method from the MaCSBook assignment uses 
+                    a very simple <code class="text-danger">for</code> loop to to find the index of a specific 
+                    student number in the list <code class="text-danger">numbers</code> by linear search.
+                </p>
+            </div>
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
+                <p>
+                    Unlike a linear search, a <b>binary search</b>
+                    can only be used in an already sorted array, but is much faster with <b><i>O(log n)</i></b> efficiency. 
+                    Instead of checking every individual value, a binary search 
+                    starts in the middle of the sorted array and checks if it is higher or lower than the value
+                    being searched for. Depending on this, the next value the algorithm checks is the middle 
+                    value of the left or right half of the array. This process continues until the exact value
+                    is found, requiring fewer searches than linear search. 
+                </p>
+            </div>
+
+            <!-- Image -->
+            <div class="container tutorial-content-container" style="margin-top: 0%; margin-bottom: 0%">
+                <img src="assets/search.gif" style="width: 90%;">            
+            </div>
+
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    The above animation from <a href="bibliography.html">Penjee</a> shows the difference 
+                    in process and efficiency between a linear and binary search on the same set of data.
+                    The binary search only required 3 steps while the linear takes 11. 
+                </p>
+            </div>
+
+            <!-- Text -->
+            <div class="container tutorial-content-container">
+                <p>
+                    <b>Sorting</b> is the process of arranging a set of data in ascending or descending order
+                    based on the values of the elements. This allows methods such as binary search to be performed.
+                    Like with searching, there exist many different sorting algorithms, each with their own specific traits,
+                    and the efficiency of sorting algorithms can also be measured using Big-O notation.<br><br>
+
+                    <b>Insertion sort</b> is one of the simpler sorting algorithms that "inserts" elements one at a time
+                    into a sorted order built from left to right within the original array, similar to how one would sort
+                    a hand of playing cards. This is done through iterating through each value and continuously <b>swapping</b> 
+                    it with the value before it until it is in sorted position. This two-layered iteration makes insertion sort
+                    not very fast for large sets of data, with an <b><i>O(n<sup>2</sup>)</i></b> efficiency.
+                </p>
+            </div>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">MaCSBook.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('sort2')">
+                        Copy
+                        <span class="tooltiptext" id="sort2-msg">Copied!</span>
+                    </div>
+                </div>
+
+            <!-- Code Text -->
+<pre class="text-white code-text" id="sort2">
+public void sortNames() throws IOException {
+    for (int i =1 ; i &lt; names.size(); i++) {
+        for (int j = 0; j &lt; i; j++) {
+            int compare = names.get(i).toLowerCase().compareTo(names.get(j).toLowerCase());
+            if (compare &lt; 0) {
+                names.add(j, names.get(i));
+                // update other fields...
+                names.remove(i+1);
+                // update other fields...
+                break;
+            }
+            else if (compare == 0) {
+                names.add(j+1, names.get(i));
+                // update other fields...
+                names.remove(i+1);
+                // update other fields...
+            }
+        }
+    }
+    printSorted();
+}</pre>
+            </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    The <code class="text-danger">sortNames()</code> method from the MaCSBook assignment applies
+                    insertion sort to arrange all the student data stored in the program by ascending alphabetic
+                    order based on the students' names. The <code class="text-danger">compareTo()</code> String 
+                    method is used to allow alphabetic order to be represented numerically, and two values are
+                    swapped if they are out of order. 
                 </p>
             </div>
 
@@ -95,9 +216,9 @@ java</pre>
             <!-- Caption -->
             <div class="container tutorial-content-container caption">
                 <p>
-                    A video demonstration of the <b>Timsort</b> sorting algorithm, a combination of the 
-                    insertion sort and merge sort with countless real-world applications due to its 
-                    efficiency.
+                    A video demonstration of the <b>Timsort</b> sorting algorithm, a combination insertion sort
+                    and another algorithm called merge sort. This hybrid sorting method has had
+                    countless real-world applications for efficiency, including in Python and Google Chrome.
                 </p>
             </div>
         </div>

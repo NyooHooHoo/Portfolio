@@ -28,8 +28,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="isp.html">Final ISP</a>
+                            <a class="dropdown-item" href="projects.html">Other Projects</a>
+                        </div>
                     </li>
                     <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,8 +72,8 @@
                     To do this, a recursive method must be able to handle two cases: the <b>base case</b> 
                     and the <b>recursive case</b>. <br><br>
                     
-                    The base case represents the smallest possible division
-                    of a task, when the method no longer calls itself. This is crucial to preventing the 
+                    The base case, also called the halting condition, represents the smallest possible division
+                    of a task and when the method no longer calls itself. This is crucial to preventing the 
                     method from preventing the the method from calling infinitely. On the other hand, the 
                     recursive case handles all other cases where the method does call itself again,
                     continuing the recursion.
@@ -79,21 +85,92 @@
                 <!-- Code Block Header -->
                 <div class="container copy-container">
                     <span class="copy-text"><code class="text-dark">Recursion1.java</code></span>
-                    <div class="copy-button" type="button" onClick="copy('inh1')">
+                    <div class="copy-button" type="button" onClick="copy('rec1')">
                         Copy
-                        <span class="tooltiptext" id="inh1-msg">Copied!</span>
+                        <span class="tooltiptext" id="rec1-msg">Copied!</span>
                     </div>
                 </div>
 
                 <!-- Code Text -->
-<pre class="text-white code-text" id="inh1">
-java</pre>
+<pre class="text-white code-text" id="rec1">
+public static int exponent(int b, int e) {
+    int result = 1;
+    for (int i = 0; i &lt; e; i++)
+        result *= b;
+    return result;
+}
+
+public static int exponentR(int b, int e) {
+    if (e == 1)
+        return b;
+    return b * exponentR(b, e - 1);
+}</pre>
             </div>
             
             <!-- Caption -->
             <div class="container tutorial-content-container caption">
                 <p>
-                    wow.
+                    Two <code class="text-danger">static</code> methods from Recursion Assignment Set 1 that 
+                    show both an iterative (regular looping) and recursive solution to calculating an 
+                    exponential given a base and exponent. The iterative method <code class="text-danger">exponent()</code>
+                    uses a <code class="text-danger">for</code> loop to multiply the integer <code class="text-danger">b</code> 
+                    by itself until the counter reaches the integer <code class="text-danger">e</code>. The recursive 
+                    method <code class="text-danger">exponentR()</code> has a base case of <code class="text-danger">e == 1</code>,
+                    because any number to the power of 1 is always itself, and a recursive case of multiplying 
+                    <code class="text-danger">b</code> by itself to the power of one less than 
+                    the passed exponent, which would eventually reach the base case and return the correct value.
+                </p>
+            </div>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Recursion2.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('rec2')">
+                        Copy
+                        <span class="tooltiptext" id="rec2-msg">Copied!</span>
+                    </div>
+                </div>
+            <!-- Code Text -->
+<pre class="text-white code-text" id="rec2">
+public static void main(String[] args) {
+    int[][] grid = {
+            {12, 10, 33, 21},
+            {15, 20, 14, 24},
+            {18, 15, 52, 5},
+            {22, 21, 30, 41}
+        };
+    System.out.print("Mininum Cost Route: $");
+    System.out.println(minCost(grid, grid.length - 1, 0));
+}
+
+public static int minCost(int[][] grid, int r, int c) {
+    if (r == 0 && c == grid[0].length - 1)
+        return grid[r][c];
+    else if (r == 0)
+        return grid[r][c] + minCost(grid, r, Math.min(c + 1, grid[c].length-1));
+    else if (c == grid[0].length - 1)
+        return grid[r][c] + minCost(grid, Math.max(0, r - 1), c);
+        
+    int north = minCost(grid, Math.max(0, r - 1), c);
+    int east = minCost(grid, r, Math.min(c + 1, grid[c].length - 1));
+    return grid[r][c] + Math.min(north, east);
+}</pre>
+            </div>
+                    
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    A more complex application of recursion from Recursion Assignment Set 2, where the 
+                    method <code class="text-danger">minCost()</code> is used to find the minimum cost
+                    to travel from one corner to another in a grid of integers. The method has 3 base cases
+                    for when the north edge, east edge, and north-east corner have been reached, in which 
+                    case there is only one possible value to return. The recursive case of the method 
+                    calls <code class="text-danger">minCost()</code> starting from the position 1 north
+                    and again 1 east of the current position. It then adds the
+                    minimum of these two values to the final cost, allowing the method to always find 
+                    the lowest cost after each layer of recursion. 
                 </p>
             </div>
 

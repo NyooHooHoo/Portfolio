@@ -28,8 +28,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="isp.html">Final ISP</a>
+                            <a class="dropdown-item" href="projects.html">Other Projects</a>
+                        </div>
                     </li>
                     <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,10 +115,95 @@ public class Hyrmus extends Elemental {
                     only one parameter described in the <a href="oop.html">OOP Tutorial</a>.</p>
             </div>
 
+            <!-- Text -->
+            <div class="container tutorial-content-container">
+                <p>
+                    A special type of data structure in Java is an <b>Abstract Class</b>. These classes are similar
+                    to other normal classes, but contain <code class="text-danger">abstract</code> methods with
+                    only a signature and no body. As such, <code class="text-danger">abstract</code> classes cannot
+                    be instantiated on their own, but can be the parent of child classes that <b>implement</b>, or 
+                    write the bodies for, their abstract methods.<br><br>
+
+                    Similar to <code class="text-danger">abstract</code> classes are <b>Interfaces</b>, which are unique
+                    data structures seperate from classes that can only contain <code class="text-danger">public</code>
+                    method signatures that are meant to be impemented by other classes. Unlike parent-child class relationships,
+                    where a class can only <code class="text-danger">extend</code> one parent, classes can implement as many 
+                    different interfaces as they need.
+                    However, any class that extends an <code class="text-danger">abstract</code> class or implements an interface
+                    must implement all methods from that data structure.
+                </p>
+            </div>
+
+            <!-- Code Block -->
+            <div class="container bg-dark code-block">
+                <!-- Code Block Header -->
+                <div class="container copy-container">
+                    <span class="copy-text"><code class="text-dark">Character.java</code></span>
+                    <div class="copy-button" type="button" onClick="copy('inh2')">
+                        Copy
+                        <span class="tooltiptext" id="inh2-msg">Copied!</span>
+                    </div>
+                </div>
+
+                <!-- Code Text -->
+<pre class="text-white code-text" id="inh2">
+public abstract class Character {
+    public String name;
+    
+    /* Other fields, constructor, and methods not shown */
+
+    public abstract String getName();
+}
+
+class Dragon extends Character {
+    /* Other fields, constructor, and methods not shown */
+
+    public String getName() {
+        return "Dragon " + this.name;
+    }
+}
+
+class Elf extends Character {
+    /* Other fields, constructor, and methods not shown */
+    
+    public String getName() {
+        return "Elf " + name;
+    }
+}</pre>
+            </div>
+            
+            <!-- Caption -->
+            <div class="container tutorial-content-container caption">
+                <p>
+                    Snippets of 3 classes from the Fantasty Game assignment. The parent <code class="text-danger">Character</code>
+                    class is an <code class="text-danger">abstract</code> class with the <code class="text-danger">abstract</code>
+                    method <code class="text-danger">getName()</code>. This method is implemented differently in each of the 
+                    two children <code class="text-danger">Elf</code> and <code class="text-danger">Dragon</code> to reflect the 
+                    type of character that they are.
+                </p>
+            </div>
+
             <!-- Title -->
             <div class="container tutorial-content-container">
-                <h4>To be continued...</h4>
-            </div>   
+                <h4>Common Mistakes</h4>
+            </div>  
+            
+            <!-- List -->
+            <div class="container tutorial-content-container">
+                <ul>
+                    <li>
+                        Trying to have a class extend multiple parent classes.
+                    </li>
+                    <li>
+                        Writing a method body for <code class="text-danger">abstract</code> methods in an abstract class
+                        or non-static methods in an interface.
+                    </li>
+                    <li>
+                        Not implementing all the <code class="text-danger">abstract</code> methods in a non-abstract child of
+                        an abstract class. 
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
