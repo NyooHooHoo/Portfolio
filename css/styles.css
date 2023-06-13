@@ -44,6 +44,7 @@ code {
     margin-bottom: 1%;
     display: flex;
     justify-content: left;
+    width: 60%;
 }
 
 .caption {
