@@ -242,6 +242,10 @@ code {
     font-size: 3dvh;
 }
 
+.bio-text p {
+    margin-bottom: 2dvh;
+}
+
 .bio-box {
     background-color: var(--orange);
     border-radius: 15px;
