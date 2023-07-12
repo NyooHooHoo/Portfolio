@@ -235,6 +235,11 @@ code {
 
 .bio-text {
     grid-column: span 4;
+    font-size: 2dvh;
+}
+
+.bio-text h4 {
+    font-size: 3dvh;
 }
 
 .bio-box {
@@ -252,6 +257,7 @@ code {
 
 .sleeping-milo {
     padding: 2%;
+    width: 12dvw;
 }
 
 .about-box-title {
