@@ -203,17 +203,18 @@ code {
 
 .about-me-main {
     margin-top: 100px;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 5%;
 }
 
 .bio {
     margin-top: 50px;
     display: grid;
-    grid-gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 40px;
+    grid-template-columns: repeat(6, minmax(150px, 1fr));
+    justify-items: center;
 }
 
 .about-img-link {
@@ -242,6 +243,7 @@ code {
     grid-column: span 3;
     padding: 3%;
     transition-duration: 0.3s;
+    width: 100%;
 }
 
 .bio-box:hover {
