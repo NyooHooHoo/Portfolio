@@ -1,6 +1,7 @@
 :root {
     --orange: #ffb663;
     --dark-orange: #e9a250;
+    --grey: #212529;
 }
 
 h1 {
@@ -145,6 +146,24 @@ code {
     left: 2%;
 }
 
+.home-button {
+    font-size: 2dvh;
+    font-weight: bold;
+    color: var(--grey);
+    background-color: var(--orange);
+    padding: 2%;
+    margin-right: 2%;
+    border-radius: 25px;
+    user-select: none;
+}
+
+.home-button:hover {
+    color: var(--grey);
+    text-decoration: none;
+    background-color: var(--dark-orange);
+    transition-duration: 0.25s;
+}
+
 .projects-main {
     margin-top: 100px;
 }
@@ -199,6 +218,18 @@ code {
     bottom: 0%;
     padding-top: 5%;
     padding-bottom: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.project-button {
+    color: var(--grey);
+    font-weight: bold;
+}
+
+.project-button:hover {
+    color: black;
 }
 
 .about-me-main {
